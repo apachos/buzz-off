@@ -5,7 +5,7 @@ function displayHome() {
     <div class="header">
       <h1 class="header__title">India</h1>
       <p class="header__caption">Delhi India Gate</p>
-      <a class="header__button" href="#" onclick="releaseBugs()">Explore</a>
+      <a class="header__button" href="#" onclick="explore()">Explore</a>
     </div>
   `;
 }
