@@ -1,0 +1,17 @@
+{
+  "name": "buzz-off",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/api/index.js",
+  "scripts": {
+    "start": "nodemon ./src/api/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^2.0.16",
+    "uuid": "^3.3.2"
+  }
+}

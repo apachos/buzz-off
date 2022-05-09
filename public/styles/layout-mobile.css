@@ -1,0 +1,57 @@
+@media (max-width: 768px) {
+  /* body {
+    background: url('../assets/mockup-mobile.svg') no-repeat;
+  } */
+
+  /* Canvas */
+  .canvas {
+    width: 100%;
+    min-height: 375px;
+    max-height: 100%;
+  }
+
+  .canvas__photo {
+    object-position: 9% center;
+    border-radius: 0;
+  }
+
+  .canvas__overlay {
+    border-radius: 0;
+  }
+
+  /* Header */
+  .header__title {
+    font-size: 140px;
+    line-height: 90px;
+  }
+
+  /* Nav */
+  .nav {
+    top: 5px;
+    left: 25px;
+    right: 27px;
+  }
+
+  .nav__header {
+    font-size: 30px;
+  }
+
+  .menu {
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    align-self: flex-start;
+    height: 200px;
+  }
+
+  .menu li:not(.menu__hamburger) {
+    display: none;
+  }
+
+  .menu__hamburger {
+    order: -1;
+  }
+
+  #nav__toggle:checked + .menu li:not(.more-icon) {
+    display: block;
+  }
+}
