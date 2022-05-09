@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:3000/api/attractions
+
+# Get all attractions
+GET {{baseUrl}}/
+
+###
+
+# Get attraction by ID
+GET {{baseUrl}}/bab8e74f-0270-4aef-bb56-b3651ff348de
+
+###
+
+# TODO Add new attraction
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+  "name": "The Indira Gandhi Memorial Museum",
+  "description": "Another important politician-related attraction is the Indira Gandhi Memorial Museum, housed in the former residence of this much-revered woman (Indira was the daughter of India's first Prime Minister, Jawaharlal Nehru, and although a friend of Mahatma Gandhi, was unrelated).",
+  "address": "1 Safdarjung Road, New Delhi, Delhi 110011, India",
+  "site": null,
+  "rank": 14
+}
+
+###
+
+# TODO Update attraction
+PUT {{baseUrl}}/bab8e74f-0270-4aef-bb56-b3651ff348de
+Content-Type: application/json
+
+{
+  "rank": 10
+}
+
+###
+
+# TODO Delete attraction
+DELETE {{baseUrl}}/bab8e74f-0270-4aef-bb56-b3651ff348de
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
