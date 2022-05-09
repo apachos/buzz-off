@@ -20,7 +20,7 @@ const attractions = [
   },
   {
     id: '5aad8025-f847-49f6-83ae-12188834ce0b',
-    name: 'Gandhi Smriti and the Mahatma Gandhi Memorial',
+    name: 'Gandhi Smriti',
     description:
       "Numerous references can be found to Mahatma Gandhi throughout Delhi, a testament to the man's legacy. Of the many attractions related to the famed leader of the Indian independence movement, perhaps the best is Gandhi Smriti (Gandhi Remembrance), a museum housed in the property where he was assassinated in 1948.",
     address: '5 Tees January Marg, New Delhi, Delhi, India',
