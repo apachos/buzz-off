@@ -16,7 +16,7 @@ exports.getById = (req, res, next) => {
       if (!attraction) {
         return res.status(404).send(new Error('Attraction not found!'));
       }
-      res.status(200).json(attraction);
+      res.status(200).body(attraction);
     })
     .catch(() => {
       res.status(500).send(new Error('Kerblach!'));
