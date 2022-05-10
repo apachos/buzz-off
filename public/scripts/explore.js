@@ -30,6 +30,7 @@ function addSlides(attractions) {
     slideHtml += `
       <div class="carousel__slide">
         <h3><a href="${attraction.site}">${attraction.name}</a></h3>
+        <address>${attraction.address}</address>
         <p>(ranked #${attraction.rank})</p>
         <q>${attraction.description}</q>
       </div>
