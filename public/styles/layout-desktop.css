@@ -93,6 +93,15 @@
   transform: scale(1.05);
 }
 
+/* temporary for my new Klingon graphics card */
+.header::after {
+  position: relative;
+  height: 0;
+  color: transparent;
+  content: '🐜';
+  left: 400px;
+}
+
 /* Nav */
 .nav {
   position: absolute;
