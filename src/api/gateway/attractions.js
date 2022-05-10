@@ -5,7 +5,7 @@ const attractions = [
     name: 'The Red Fort',
     description:
       'The beautiful Red Fort (Lal Qila) was built by Shah Jahan in 1648 and served as the seat of Mughal power until 1857. This stunning structure, with its tall, red sandstone walls covers an area of more than two square kilometers, the entirety of which is crescent shaped and surrounded by a moat.',
-    address: 'Netaji Subhash Marg, Chandni Chowk, New Delhi, Delhi 110006, India',
+    adress: 'Netaji Subhash Marg, Chandni Chowk, New Delhi, Delhi 110006, India',
     site: 'https://www.indiaculture.nic.in/red-fort-complex',
     rank: 1,
   },
@@ -14,7 +14,7 @@ const attractions = [
     name: 'India Gate',
     description:
       'Looking a little like the famous Arc de Triomphe in Paris, the equally impressive India Gate is a magnificent stone arch built as a memorial to Indian soldiers killed in WWI. An eternal flame burns beneath the massive structure, and its walls are inscribed with the names of more than 90,000 soldiers who died in the conflict.',
-    address: 'Rajpath, India Gate, New Delhi, Delhi, India',
+    adress: 'Rajpath, India Gate, New Delhi, Delhi, India',
     site: null,
     rank: 6,
   },
@@ -23,7 +23,7 @@ const attractions = [
     name: 'Gandhi Smriti',
     description:
       "Numerous references can be found to Mahatma Gandhi throughout Delhi, a testament to the man's legacy. Of the many attractions related to the famed leader of the Indian independence movement, perhaps the best is Gandhi Smriti (Gandhi Remembrance), a museum housed in the property where he was assassinated in 1948.",
-    address: '5 Tees January Marg, New Delhi, Delhi, India',
+    adress: '5 Tees January Marg, New Delhi, Delhi, India',
     site: 'http://www.gandhismriti.gov.in/',
     rank: 12,
   },
