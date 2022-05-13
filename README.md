@@ -4,6 +4,18 @@ Practice debugging code
 
 <p align="center"><img src="public/assets/bugz.gif"></p>
 
+## How to build and run (VS Code)
+* Project setup (one time)
+```
+npm install
+```
+* Start backend Node server
+```
+npm start
+```
+* Start frontend
+  - Recommend installing [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code extension and serve the "public/index.html" file ("public" will be the root folder)
+
 ## Concepts covered:
 * Identifying bugs using several strategies:
   - eliminating "noise" (i.e. temporarily commenting out or deleting chunks of code until the area of the code base responsible is detected for easier analysis)

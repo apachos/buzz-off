@@ -1,14 +1,14 @@
 {
   "name": "buzz-off",
   "version": "0.0.0",
-  "description": "",
+  "description": "Practice debugging code",
   "main": "src/api/index.js",
   "scripts": {
     "start": "nodemon ./src/api/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "apachos",
+  "license": "SEE LICENSE in LICENSE",
   "dependencies": {
     "express": "^4.16.4",
     "nodemon": "^2.0.16",
