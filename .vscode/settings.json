@@ -1,0 +1,7 @@
+{
+  "liveServer.settings.root": "/public",
+  "material-icon-theme.folders.associations": {
+    "assets": "images",
+    "gateways": "connection"
+  }
+}
