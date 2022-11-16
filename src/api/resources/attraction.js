@@ -33,3 +33,18 @@ exports.findAll = (req, res) => {
     res.status(200).json(sauces);
   });
 };
+
+exports.save = (req, res) => {
+  tryOperation(res, async () => {
+    const attraction = new Attraction({
+      name: req.body.name,
+      description: req.body.description,
+      address: req.body.address,
+      site: req.body.site,
+      rank: req.body.rank,
+    });
+
+    await attraction.save();
+    res.status(201).json({ message: 'Attraction saved successfuly!' });
+  });
+};
