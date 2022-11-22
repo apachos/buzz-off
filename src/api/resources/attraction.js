@@ -28,9 +28,9 @@ const { tryOperation } = require('./');
 
 exports.findAll = (req, res) => {
   tryOperation(res, async () => {
-    const sauces = await Attraction.find();
+    const attractions = await Attraction.find();
 
-    res.status(200).json(sauces);
+    res.status(200).json(attractions);
   });
 };
 
@@ -46,5 +46,12 @@ exports.save = (req, res) => {
 
     await attraction.save();
     res.status(201).json({ message: 'Attraction saved successfuly!' });
+  });
+};
+
+exports.delete = (req, res) => {
+  tryOperation(res, async () => {
+    await Attraction.deleteOne({ _id: req.params.id });
+    res.status(200).json({ message: 'Deleted!' });
   });
 };
