@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "",
+    "password": null,
+    "database": "buzz-off-dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": true
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": true
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false
+  }
+}

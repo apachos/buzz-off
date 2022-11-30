@@ -1,34 +1,17 @@
-// const Attractions = require('../gateways/attraction');
-
-// exports.getAll = (req, res, next) => {
-//   Attractions.find()
-//     .then(attractions => {
-//       res.status(200).json(attractions);
-//     })
-//     .catch(() => {
-//       res.status(500).send(new Error('Kaboom!'));
-//     });
-// };
-
-// exports.getById = (req, res, next) => {
-//   Attractions.findById(req.params.id)
-//     .then(attraction => {
-//       if (!attraction) {
-//         return res.status(404).send(new Error('Attraction not found!'));
-//       }
-//       res.status(200).json(attraction);
-//     })
-//     .catch(() => {
-//       res.status(500).send(new Error('Kerblach!'));
-//     });
-// };
-
-const Attraction = require('../models/attraction');
+const uuid = require('uuid/v1');
+const { Attraction, Address } = require('../models/index');
 const { tryOperation } = require('./');
 
 exports.findAll = (req, res) => {
   tryOperation(res, async () => {
-    const attractions = await Attraction.find();
+    const attractions = await Attraction.findAll({
+      attributes: { exclude: ['addressId', 'createdAt', 'updatedAt'] },
+      include: {
+        model: Address,
+        as: 'address',
+        attributes: { exclude: ['id', 'createdAt', 'updatedAt'] },
+      },
+    });
 
     res.status(200).json(attractions);
   });
@@ -36,13 +19,22 @@ exports.findAll = (req, res) => {
 
 exports.save = (req, res) => {
   tryOperation(res, async () => {
-    const attraction = new Attraction({
-      name: req.body.name,
-      description: req.body.description,
-      address: req.body.address,
-      site: req.body.site,
-      rank: req.body.rank,
-    });
+    const attraction = new Attraction(
+      {
+        id: uuid(),
+        name: req.body.name,
+        description: req.body.description,
+        address: {
+          street: req.body.address.street,
+          city: req.body.address.city,
+          state: req.body.address.state,
+          zip: req.body.address.zip,
+        },
+        site: req.body.site,
+        rank: req.body.rank,
+      },
+      { include: { model: Address, as: 'address' } }
+    );
 
     await attraction.save();
     res.status(201).json({ message: 'Attraction saved successfuly!' });
@@ -51,7 +43,15 @@ exports.save = (req, res) => {
 
 exports.delete = (req, res) => {
   tryOperation(res, async () => {
-    await Attraction.deleteOne({ _id: req.params.id });
-    res.status(200).json({ message: 'Deleted!' });
+    const id = req.params.id;
+    const attraction = await Attraction.findOne({ where: { id } });
+
+    if (attraction) {
+      await Address.destroy({ where: { id: attraction.addressId } });
+      await attraction.destroy();
+      res.status(200).json({ message: 'Deleted!' });
+    } else {
+      res.status(400).json({ error: `No attraction found for '${id}'` });
+    }
   });
 };

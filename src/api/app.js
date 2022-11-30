@@ -2,8 +2,6 @@ const express = require('express');
 const logger = require('morgan');
 const attractionRouter = require('./routes/attraction');
 
-require('./models').init();
-
 const logLevel = process.env.LOG_LEVEL;
 const app = express();
 const enableCors = (req, resp, next) => {

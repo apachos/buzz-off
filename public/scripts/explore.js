@@ -27,10 +27,13 @@ function addSlides(attractions) {
   let slideHtml = '';
 
   attractions.forEach(attraction => {
+    const addr = attraction.address;
+    const address = `${addr.street}, ${addr.city}, ${addr.state} ${addr.postalCode || ''}`;
+
     slideHtml += `
       <div class="carousel__slide">
-        <h3><a href="${attraction.site}">${attraction.name}</a></h3>
-        <address>${attraction.address}</address>
+        <h3><a href="${attraction.site || '#'}">${attraction.name}</a></h3>
+        <address>${address}</address>
         <p>(ranked #${attraction.rank})</p>
         <q>${attraction.description}</q>
       </div>
