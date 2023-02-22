@@ -6,7 +6,9 @@
   "scripts": {
     "start": "echo \"TODO build project into dist folder for production\" && exit 1",
     "start:dev": "DEBUG=buzz-off:* nodemon ./src/api/server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pgsql:start": "brew services run postgresql@14",
+    "pgsql:stop": "brew services stop postgresql@14"
   },
   "author": "apachos",
   "license": "SEE LICENSE in LICENSE",
